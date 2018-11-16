@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TestSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_jpg"/>
+	<e:Label id="label" text="{data.label}" horizontalCenter="0" y="154" size="69"/>
+</e:Skin>

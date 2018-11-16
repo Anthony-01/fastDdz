@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="StartGameSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_jpg"/>
+	<e:Image id="gameLogo" y="230" horizontalCenter="0"/>
+	<e:Component id="gold" width="273" height="72" y="267" horizontalCenter="0"/>
+	<e:Label id="label" horizontalCenter="0" y="154" size="69" text="{gameData.label}"/>
+	<e:Button id="btnStartGame" label="开始游戏" horizontalCenter="0" verticalCenter="0"/>
+	<e:Button id="btnShare" label="分享游戏" y="655" horizontalCenter="0"/>
+	<e:Button id="rankFriend" label="好友排行" x="58" y="838"/>
+	<e:Button id="rankGroup" label="群排行" x="418" y="840"/>
+</e:Skin>
