@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="UserInfoSkin" xmlns:e="http://ns.egret.com/eui">
+	<e:Image source="head_0_jpg"/>
+	<e:Rect width="300" height="300" fillAlpha="0.1" ellipseWidth="300" ellipseHeight="300"/>
+</e:Skin>

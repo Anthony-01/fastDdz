@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="HeadBorderSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="1676379b429"/>
+	<e:Image id="bg" source="head_bg_self_png"/>
+	<e:Image verticalCenter="0" source="head_mask_png" horizontalCenter="0"/>
+	<e:Image id="count_down_border" source="count_down_border_png" horizontalCenter="0" y="4"/>
+	<e:Image id="border_dot" y="6" source="count_down_dot_png" anchorOffsetX="12" anchorOffsetY="12" x="57"/>
+</e:Skin>

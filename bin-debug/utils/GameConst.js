@@ -44,8 +44,65 @@ var utils;
             }
             return;
         };
+        GameConst.stageW = 640;
+        GameConst.stageH = 1134;
         return GameConst;
     }());
     utils.GameConst = GameConst;
     __reflect(GameConst.prototype, "utils.GameConst");
+    /**构造对象
+     * 泛型
+     */
+    function createInstance(c) {
+        return new c();
+    }
+    utils.createInstance = createInstance;
+    /**构造泛型数组
+     * 一维数组
+     */
+    function allocArray(dimension, instance) {
+        var arr = new Array();
+        for (var i = 0; i < dimension; i++) {
+            arr[i] = utils.createInstance(instance);
+        }
+        return arr;
+    }
+    utils.allocArray = allocArray;
+    /**
+     * 构造泛型数组
+     * 二维数组
+     * eg: alloc2Array<Number>(2,4,Number)  [2][4]
+     * alloc2Array<tagWeaveItem>(2,4,tagWeaveItem) [2][4]
+     */
+    function alloc2Array(dimension, count, instance) {
+        //let arr: T[] = [];
+        var arr = new Array();
+        for (var i = 0; i < dimension; i++) {
+            arr[i] = [];
+            for (var j = 0; j < count; j++) {
+                arr[i][j] = utils.createInstance(instance);
+            }
+        }
+        return arr;
+    }
+    utils.alloc2Array = alloc2Array;
+    /**
+     * 构造数组
+     * 三维数组
+     * eg: alloc2Array<number>(2,4,4)  [2][4][4]
+     */
+    function alloc3Array(dimension, count, count1, instance) {
+        var arr = [];
+        for (var i = 0; i < dimension; i++) {
+            arr[i] = [];
+            for (var j = 0; j < count; j++) {
+                arr[i][j] = [];
+                for (var k = 0; k < count1; k++) {
+                    arr[i][j][k] = utils.createInstance(instance);
+                }
+            }
+        }
+        return arr;
+    }
+    utils.alloc3Array = alloc3Array;
 })(utils || (utils = {}));

@@ -8,17 +8,28 @@ declare interface Platform {
 
     getUserInfo(): Promise<any>;
 
+    //登录功能接口
     login(): Promise<any>
-
+    //分享功能接口
+    shop(): Promise<any>
+    //主动转发
+    shareAppMessage(): Promise<any>
+    //游戏圈
+    createGameClubButton(): Promise<any>
+    //排行榜
+    openDataContext: any
 }
 
 class DebugPlatform implements Platform {
     async getUserInfo() {
         return { nickName: "username" }
     }
-    async login() {
+    async login() {}
+    async shop() {}
+    async shareAppMessage() {}
+    async createGameClubButton() {}
 
-    }
+    openDataContext: any
 }
 
 

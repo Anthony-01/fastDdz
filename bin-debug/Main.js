@@ -71,18 +71,27 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 //  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 //////////////////////////////////////////////////////////////////////////////////////
-var TestSkin = game.TestSkin;
-var GameStartLayer = game.StartGameLayer;
+var StartGameLayer = game.StartGameLayer;
+var GameModel = game.GameModel;
+var GameControl = game.GameControl;
+var GameEngine = game.GameEngine;
 // declare var TestSkin;
 var Main = (function (_super) {
     __extends(Main, _super);
     function Main() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    //Main 游戏入口;包括初始化游戏引擎以及游戏界面
-    //_gameEngine，游戏主业务逻辑
-    //_gameView,游戏界面
-    //客户端与服务器的交互GameModel; onGameMessage
+    Object.defineProperty(Main, "Instance", {
+        //Main 游戏入口;包括初始化游戏引擎以及游戏界面
+        //_gameEngine，游戏主业务逻辑
+        //_gameView,游戏界面
+        //客户端与服务器的交互GameModel; onGameMessage
+        get: function () {
+            return this;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Main.prototype.createChildren = function () {
         _super.prototype.createChildren.call(this);
         egret.lifecycle.addLifecycleListener(function (context) {
@@ -105,24 +114,31 @@ var Main = (function (_super) {
     };
     Main.prototype.runGame = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var userInfo;
+            var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.loadResource()];
+                    case 0:
+                        // platform.openDataContext.postMessage({
+                        //     command: "loadRes"
+                        // });
+                        platform.shop();
+                        platform.createGameClubButton();
+                        return [4 /*yield*/, this.loadResource()];
                     case 1:
                         _a.sent();
-                        this.createGameScene();
-                        // const result = await RES.getResAsync("description_json")
-                        // this.startAnimation(result);
-                        return [4 /*yield*/, platform.login()];
+                        return [4 /*yield*/, platform.login().then(function (data) {
+                                console.log("%c打印用户信息", "color: red;font-size: 2em");
+                                console.log(data);
+                                GameEngine.getInstance().userInfo = data;
+                                //根据code请求用户的个人信息
+                                //需要请求UserInfo
+                                _this.createGameScene();
+                            }).catch(function (err) {
+                                //用户不授权情况下直接退出小程序
+                                console.log(err);
+                            })];
                     case 2:
-                        // const result = await RES.getResAsync("description_json")
-                        // this.startAnimation(result);
                         _a.sent();
-                        return [4 /*yield*/, platform.getUserInfo()];
-                    case 3:
-                        userInfo = _a.sent();
-                        console.log(userInfo);
                         return [2 /*return*/];
                 }
             });
@@ -134,7 +150,7 @@ var Main = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 4, , 5]);
+                        _a.trys.push([0, 6, , 7]);
                         return [4 /*yield*/, RES.loadConfig("resource/default.res.json", "resource/")];
                     case 1:
                         _a.sent();
@@ -146,14 +162,19 @@ var Main = (function (_super) {
                         return [4 /*yield*/, this.loadTheme()];
                     case 3:
                         _a.sent();
-                        // await RES.loadGroup("preload", 0, loadingView);
-                        this.stage.removeChild(loadingView);
-                        return [3 /*break*/, 5];
+                        return [4 /*yield*/, RES.loadGroup("preload", 0, loadingView)];
                     case 4:
+                        _a.sent();
+                        return [4 /*yield*/, RES.loadGroup("gameScene", 0, loadingView)];
+                    case 5:
+                        _a.sent();
+                        this.stage.removeChild(loadingView);
+                        return [3 /*break*/, 7];
+                    case 6:
                         e_1 = _a.sent();
                         console.error(e_1);
-                        return [3 /*break*/, 5];
-                    case 5: return [2 /*return*/];
+                        return [3 /*break*/, 7];
+                    case 7: return [2 /*return*/];
                 }
             });
         });
@@ -174,113 +195,8 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
-        // let sky = this.createBitmapByName("bg_jpg");
-        // this.addChild(sky);
-        // let stageW = this.stage.stageWidth;
-        // let stageH = this.stage.stageHeight;
-        // sky.width = stageW;
-        // sky.height = stageH;
-        //
-        // let topMask = new egret.Shape();
-        // topMask.graphics.beginFill(0x000000, 0.5);
-        // topMask.graphics.drawRect(0, 0, stageW, 172);
-        // topMask.graphics.endFill();
-        // topMask.y = 33;
-        // this.addChild(topMask);
-        //
-        // let icon: egret.Bitmap = this.createBitmapByName("egret_icon_png");
-        // this.addChild(icon);
-        // icon.x = 26;
-        // icon.y = 33;
-        //
-        // let line = new egret.Shape();
-        // line.graphics.lineStyle(2, 0xffffff);
-        // line.graphics.moveTo(0, 0);
-        // line.graphics.lineTo(0, 117);
-        // line.graphics.endFill();
-        // line.x = 172;
-        // line.y = 61;
-        // this.addChild(line);
-        //
-        //
-        // let colorLabel = new egret.TextField();
-        // colorLabel.textColor = 0xffffff;
-        // colorLabel.width = stageW - 172;
-        // colorLabel.textAlign = "center";
-        // colorLabel.text = "Hello Egret";
-        // colorLabel.size = 24;
-        // colorLabel.x = 172;
-        // colorLabel.y = 80;
-        // this.addChild(colorLabel);
-        //
-        // let textfield = new egret.TextField();
-        // this.addChild(textfield);
-        // textfield.alpha = 0;
-        // textfield.width = stageW - 172;
-        // textfield.textAlign = egret.HorizontalAlign.CENTER;
-        // textfield.size = 24;
-        // textfield.textColor = 0xffffff;
-        // textfield.x = 172;
-        // textfield.y = 135;
-        // this.textfield = textfield;
-        //
-        // let button = new eui.Button();
-        // button.label = "Click!";
-        // button.horizontalCenter = 0;
-        // button.verticalCenter = 0;
-        // this.addChild(button);
-        // button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
-        var gameStart = new GameStartLayer();
-        this.addChild(gameStart);
-    };
-    /**
-     * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
-     * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.
-     */
-    Main.prototype.createBitmapByName = function (name) {
-        var result = new egret.Bitmap();
-        var texture = RES.getRes(name);
-        result.texture = texture;
-        return result;
-    };
-    /**
-     * 描述文件加载成功，开始播放动画
-     * Description file loading is successful, start to play the animation
-     */
-    Main.prototype.startAnimation = function (result) {
-        var _this = this;
-        var parser = new egret.HtmlTextParser();
-        var textflowArr = result.map(function (text) { return parser.parse(text); });
-        var textfield = this.textfield;
-        var count = -1;
-        var change = function () {
-            count++;
-            if (count >= textflowArr.length) {
-                count = 0;
-            }
-            var textFlow = textflowArr[count];
-            // 切换描述内容
-            // Switch to described content
-            textfield.textFlow = textFlow;
-            var tw = egret.Tween.get(textfield);
-            tw.to({ "alpha": 1 }, 200);
-            tw.wait(2000);
-            tw.to({ "alpha": 0 }, 200);
-            tw.call(change, _this);
-        };
-        change();
-    };
-    /**
-     * 点击按钮
-     * Click the button
-     */
-    Main.prototype.onButtonClick = function (e) {
-        var panel = new eui.Panel();
-        panel.title = "Title";
-        panel.horizontalCenter = 0;
-        panel.verticalCenter = 0;
-        this.addChild(panel);
+        this.addChild(GameEngine.getInstance());
     };
     return Main;
-}(eui.UILayer));
+}(GameModel));
 __reflect(Main.prototype, "Main");

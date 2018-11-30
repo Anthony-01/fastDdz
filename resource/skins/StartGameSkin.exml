@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="StartGameSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image source="bg_jpg"/>
+	<e:Image source="start_png"/>
 	<e:Image id="gameLogo" y="230" horizontalCenter="0"/>
-	<e:Component id="gold" width="273" height="72" y="267" horizontalCenter="0"/>
-	<e:Label id="label" horizontalCenter="0" y="154" size="69" text="{gameData.label}"/>
-	<e:Button id="btnStartGame" label="开始游戏" horizontalCenter="0" verticalCenter="0"/>
-	<e:Button id="btnShare" label="分享游戏" y="655" horizontalCenter="0"/>
-	<e:Button id="rankFriend" label="好友排行" x="58" y="838"/>
-	<e:Button id="rankGroup" label="群排行" x="418" y="840"/>
+	<e:Component id="gold" width="273" height="72" y="138" horizontalCenter="0"/>
+	<e:Label id="label" horizontalCenter="0" y="154" size="69" text="{gameData.label}" visible="false"/>
+	<e:Group id="group_btn" width="750" height="1334">
+		<e:Button id="btnStartGame" label="开始游戏" width="323" height="103" x="203" y="664" scaleX="1" scaleY="1"/>
+		<e:Button id="btnShare" label="分享游戏" y="799" width="323" height="98" x="203" scaleX="1" scaleY="1"/>
+		<e:Button id="rankFriend" label="好友排行" x="89" y="1025" height="77" width="215" scaleX="1" scaleY="1"/>
+		<e:Button id="rankGroup" label="群排行" x="439" y="1023" width="214" height="75" scaleX="1" scaleY="1"/>
+	</e:Group>
 </e:Skin>
