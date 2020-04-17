@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GetGoldScdSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="img_bg" source="details_back_1_png"/>
+	<e:Image id="img_border" source="details_nine_png" scale9Grid="13,12,35,36" width="214" height="374"/>
+	<e:Image id="img_gold" horizontalCenter="0" verticalCenter="0" source=""/>
+	<e:Label id="label_gold" text="6,400" horizontalCenter="0" size="32" textColor="0xe8b429" bottom="14"/>
+	<e:Label id="label_day" text="第7天" size="28" horizontalCenter="0" top="14" textColor="0xcfc6a2" fontFamily="DFKai-SB"/>
+</e:Skin>

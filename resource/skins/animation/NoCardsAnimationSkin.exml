@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NoCardsAnimationSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+	<w:Declarations>
+		<tween:TweenGroup id="noCardsAnimation">
+			<tween:TweenItem target="{animation_group}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="1050"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{pass_bg}">
+				<tween:Set/>
+			</tween:TweenItem>
+			<tween:TweenItem target="{pass_text}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}" y="{72}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object alpha="{1}" y="{36}"/>
+					</tween:props>
+				</tween:To>
+				<tween:Wait duration="500"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="250">
+					<tween:props>
+						<e:Object alpha="{0}" y="{0}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+	</w:Declarations>
+	<e:Group id="animation_group" alpha="0">
+		<e:Image id="pass_bg" source="pass_bg_png"/>
+		<e:Image id="pass_text" source="pass_text_png" horizontalCenter="0" y="36"/>
+	</e:Group>
+</e:Skin>

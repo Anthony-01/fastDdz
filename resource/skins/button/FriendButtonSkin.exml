@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FriendButtonSkin" width="330" height="84" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="down,up"  width.down="330" height.down="84" width.up="330" height.up="84">
+	<e:Image id="img_bg" source="rank_btn_bg_png" alpha.up="1"/>
+	<e:Image id="rank_label" source="rank_text_friends_png" horizontalCenter="0" verticalCenter="0" source.up="rank_text_friends_png" source.down="rank_text_friends_png"/>
+</e:Skin>

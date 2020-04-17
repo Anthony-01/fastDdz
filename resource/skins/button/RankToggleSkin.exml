@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RankToggleSkin" width="660" height="84" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="105" source="rank_text_friends_png" verticalCenter="0" visible="false"/>
+	<e:Image x="435" source="rank_text_world_png" verticalCenter="0" visible="false"/>
+	<e:Component id="btn_friend" skinName="FriendButtonSkin" left="0" verticalCenter="0"/>
+	<e:Component id="btn_world" skinName="WorldButtonSkin" right="0" verticalCenter="0"/>
+</e:Skin>

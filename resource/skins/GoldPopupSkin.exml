@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GoldPopupSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="167ee9abb3e"/>
+	<e:Group horizontalCenter="0">
+		<e:Image source="popup_back_ground_png" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="27,97,678,20" height="554" y="0" scaleX="1" scaleY="1"/>
+		<e:Image x="288" y="21" source="popup_title_gold_png"/>
+		<e:Image x="508" y="162" source="popup_text_give_png"/>
+		<e:Image y="152" source="popup_gold_text_1_png" scaleX="1" scaleY="1" x="55"/>
+		<e:Image x="55" y="373" source="popup_gold_text_2_png"/>
+		<e:Image x="55" y="611" source="popup_gold_text_3_png" visible="false"/>
+		<e:Image y="326" source="popup_line_png" horizontalCenter="0"/>
+		<e:Image y="535" source="popup_line_png" horizontalCenter="0"/>
+		<e:Group id="btn_group" width="734" height="535">
+			<e:Button id="btn_sign_in" label="" anchorOffsetX="118" anchorOffsetY="49" y="433" x="567">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="popup_btn_sign_in_png" source.disabled="popup_btn_sign_ined_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="btn_share" label="" x="449" y="627" visible="false">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="popup_btn_share_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="btn_details" label="" x="89" y="421">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="popup_btn_details_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="btn_close" label="" right="15" top="10">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="btn_close_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Label text="游戏过程中不能进行签到" x="456" y="336" size="20" textColor="0xffc369" visible="false"/>
+		</e:Group>
+		<e:BitmapLabel id="give_times" x="510" y="227" font="fnt_popup_fnt" text="1_3" scaleX="1" scaleY="1"/>
+	</e:Group>
+</e:Skin>

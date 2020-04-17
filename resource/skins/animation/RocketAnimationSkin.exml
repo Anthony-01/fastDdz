@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RocketAnimationSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*" width="750" height="1624">
+	<w:Declarations>
+		<tween:TweenGroup id="rocketAnimation">
+			<tween:TweenItem target="{rocket_0}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="100"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{rocket_1}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="50"/>
+				<tween:Set/>
+				<tween:Wait duration="100"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="100"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{rocket_2}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="100"/>
+				<tween:Set/>
+				<tween:Wait duration="150"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="100"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{rocket_3}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="150"/>
+				<tween:Set/>
+				<tween:Wait duration="200"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="100"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{rocket_4}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="200"/>
+				<tween:Set/>
+				<tween:Wait duration="250"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="100"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{rocket_5}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="250"/>
+				<tween:Set/>
+				<tween:Wait duration="300"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="100"/>
+				<tween:Set/>
+			</tween:TweenItem>
+			<tween:TweenItem target="{rocket_body}">
+				<tween:Set/>
+			</tween:TweenItem>
+			<tween:TweenItem target="{animation_group}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="550">
+					<tween:props>
+						<e:Object y="{708}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="550" ease="backIn">
+					<tween:props>
+						<e:Object y="{-542}"/>
+					</tween:props>
+				</tween:To>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+	</w:Declarations>
+	<e:Group id="animation_group" horizontalCenter="0" alpha="0" y="708">
+		<e:Image id="rocket_0" source="rocket_0_png" horizontalCenter="0" y="241"/>
+		<e:Image id="rocket_1" horizontalCenter="0" y="241" source="rocket_1_png"/>
+		<e:Image id="rocket_2" horizontalCenter="0" y="241" source="rocket_2_png"/>
+		<e:Image id="rocket_3" horizontalCenter="0" y="241" source="rocket_3_png"/>
+		<e:Image id="rocket_4" horizontalCenter="0" y="241" source="rocket_4_png"/>
+		<e:Image id="rocket_5" horizontalCenter="0" y="241" source="rocket_5_png"/>
+		<e:Image id="rocket_body" source="rocket_body_png"/>
+	</e:Group>
+</e:Skin>

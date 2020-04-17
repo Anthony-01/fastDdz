@@ -72,35 +72,38 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 //
 //////////////////////////////////////////////////////////////////////////////////////
 var StartGameLayer = game.StartGameLayer;
-var GameModel = game.GameModel;
-var GameControl = game.GameControl;
 var GameEngine = game.GameEngine;
-// declare var TestSkin;
+var LoadingUI = game.LoadingUI;
+var RATE = game.RATE;
+var DGameStatus = managers.DGameStatus;
+var GameConst = utils.GameConst;
+var game;
+(function (game) {
+})(game || (game = {}));
 var Main = (function (_super) {
     __extends(Main, _super);
     function Main() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.countGroupError = 0;
+        return _this;
     }
-    Object.defineProperty(Main, "Instance", {
-        //Main 游戏入口;包括初始化游戏引擎以及游戏界面
-        //_gameEngine，游戏主业务逻辑
-        //_gameView,游戏界面
-        //客户端与服务器的交互GameModel; onGameMessage
-        get: function () {
-            return this;
-        },
-        enumerable: true,
-        configurable: true
-    });
     Main.prototype.createChildren = function () {
+        game.RATE = this.stage.stageHeight / utils.GameConst.stageH;
+        // console.log("当前舞台高：", this.stage.stageWidth,this.stage.stageHeight);
         _super.prototype.createChildren.call(this);
         egret.lifecycle.addLifecycleListener(function (context) {
-            // custom lifecycle plugin
+            var onUpdate = function () {
+                // console.log("Ctrl:刷新");
+                // managers.ServiceCtrl.getInstance().onUpdate();
+            };
+            context.onUpdate = onUpdate;
         });
         egret.lifecycle.onPause = function () {
+            // utils.GameConst.colorConsole("egret:后台");
             egret.ticker.pause();
         };
         egret.lifecycle.onResume = function () {
+            // utils.GameConst.colorConsole("egret:前台");
             egret.ticker.resume();
         };
         //inject the custom material parser
@@ -108,36 +111,85 @@ var Main = (function (_super) {
         var assetAdapter = new AssetAdapter();
         egret.registerImplementation("eui.IAssetAdapter", assetAdapter);
         egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
+        RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadErr, this);
+        RES.addEventListener(RES.ResourceEvent.CONFIG_LOAD_ERROR, this.onConfigLoadErr, this);
         this.runGame().catch(function (e) {
             console.log(e);
         });
+    };
+    Main.prototype.onResourceLoadErr = function (event) {
+        var _this = this;
+        //如果加载失败超过三次，打印失败原因
+        utils.GameConst.colorConsole("资源加载失败:");
+        console.log(event);
+        var self = this;
+        if (++this.countGroupError < 3) {
+            RES.loadGroup(event.groupName).then(function () {
+                managers.FrameManager.getInstance().m_MainStage = _this.stage;
+                self.addChild(GameEngine.getInstance());
+            });
+        }
+        else {
+            if (null == this.errSprite) {
+                this.errSprite = new egret.Sprite();
+            }
+            var label = new egret.TextField();
+            this.errSprite.addChild(label);
+            this.errSprite.x = (this.stage.stageWidth - this.errSprite.width) / 2;
+            this.errSprite.y = (this.stage.stageHeight - this.errSprite.height) / 2;
+            this.addChild(this.errSprite);
+        }
+    };
+    Main.prototype.onConfigLoadErr = function (err) {
+        if (null == this.errSprite) {
+            this.errSprite = new egret.Sprite();
+        }
+        var label = new egret.TextField();
+        label.text = "加载游戏资源配置失败";
+        this.errSprite.addChild(label);
+        this.errSprite.x = (this.stage.stageWidth - this.errSprite.width) / 2;
+        this.errSprite.y = (this.stage.stageHeight - this.errSprite.height) / 2;
+        this.addChild(this.errSprite);
     };
     Main.prototype.runGame = function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        // platform.openDataContext.postMessage({
-                        //     command: "loadRes"
-                        // });
-                        platform.shop();
-                        platform.createGameClubButton();
-                        return [4 /*yield*/, this.loadResource()];
+                    case 0: return [4 /*yield*/, platform.openDataContext.postMessage({
+                            command: "loadRes",
+                            rate: game.RATE
+                        })];
                     case 1:
                         _a.sent();
+                        return [4 /*yield*/, platform.shop()];
+                    case 2:
+                        _a.sent();
+                        ////防加载卡死
+                        RES.setMaxLoadingThread(1);
+                        // platform.createGameClubButton();
+                        return [4 /*yield*/, this.loadResource()];
+                    case 3:
+                        // platform.createGameClubButton();
+                        _a.sent();
                         return [4 /*yield*/, platform.login().then(function (data) {
-                                console.log("%c打印用户信息", "color: red;font-size: 2em");
-                                console.log(data);
+                                // console.log("%c登陆所需信息:", "color: red;font-size: 2em");
+                                // console.log(data);
                                 GameEngine.getInstance().userInfo = data;
-                                //根据code请求用户的个人信息
-                                //需要请求UserInfo
                                 _this.createGameScene();
+                            }, function () {
+                                var self = _this;
+                                self.createGameScene();
+                                GameEngine.getInstance().StartScenes.rankDisable();
+                                platform.getAuthSetting(game.RATE).then(function (data) {
+                                    console.log(data);
+                                    GameEngine.getInstance().userInfo = data;
+                                    GameEngine.getInstance().StartScenes.rankActive();
+                                });
                             }).catch(function (err) {
-                                //用户不授权情况下直接退出小程序
                                 console.log(err);
                             })];
-                    case 2:
+                    case 4:
                         _a.sent();
                         return [2 /*return*/];
                 }
@@ -150,31 +202,35 @@ var Main = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 6, , 7]);
+                        _a.trys.push([0, 5, , 6]);
                         return [4 /*yield*/, RES.loadConfig("resource/default.res.json", "resource/")];
                     case 1:
                         _a.sent();
+                        // await RES.loadConfig("default.res.json", df.RESOURCE_URL);
+                        managers.FrameManager.getInstance().gameStatus = DGameStatus.LOAD;
+                        // platform.addWXOnHide(managers.FrameManager.getInstance().getDispatcher());
                         return [4 /*yield*/, RES.loadGroup("loading")];
                     case 2:
+                        // platform.addWXOnHide(managers.FrameManager.getInstance().getDispatcher());
                         _a.sent();
-                        loadingView = new LoadingUI();
-                        this.stage.addChild(loadingView);
                         return [4 /*yield*/, this.loadTheme()];
                     case 3:
                         _a.sent();
-                        return [4 /*yield*/, RES.loadGroup("preload", 0, loadingView)];
+                        loadingView = new LoadingUI();
+                        this.stage.addChild(loadingView);
+                        return [4 /*yield*/, RES.loadGroup("frontload", 1, loadingView).catch(function () {
+                                console.log("Main:网络加载错误");
+                            })];
                     case 4:
                         _a.sent();
-                        return [4 /*yield*/, RES.loadGroup("gameScene", 0, loadingView)];
-                    case 5:
-                        _a.sent();
                         this.stage.removeChild(loadingView);
-                        return [3 /*break*/, 7];
-                    case 6:
+                        RES.destroyRes("loading");
+                        return [3 /*break*/, 6];
+                    case 5:
                         e_1 = _a.sent();
                         console.error(e_1);
-                        return [3 /*break*/, 7];
-                    case 7: return [2 /*return*/];
+                        return [3 /*break*/, 6];
+                    case 6: return [2 /*return*/];
                 }
             });
         });
@@ -193,10 +249,14 @@ var Main = (function (_super) {
     /**
      * 创建场景界面
      * Create scene interface
-     */
+*/
     Main.prototype.createGameScene = function () {
+        // console.log("创建场景界面");
+        //如何床底  GameFrame
+        //开始界面的使用
+        managers.FrameManager.getInstance().m_MainStage = this.stage;
         this.addChild(GameEngine.getInstance());
     };
     return Main;
-}(GameModel));
+}(eui.UILayer));
 __reflect(Main.prototype, "Main");

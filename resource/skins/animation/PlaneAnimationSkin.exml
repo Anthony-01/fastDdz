@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PlaneAnimationSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*" width="750" height="192">
+	<w:Declarations>
+		<tween:TweenGroup id="airAnimation">
+			<tween:TweenItem target="{animation_plane}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="800">
+					<tween:props>
+						<e:Object x="{-317}"/>
+					</tween:props>
+				</tween:To>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{air_body}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{air_line}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="100">
+					<tween:props>
+						<e:Object rotation="{180}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="100">
+					<tween:props>
+						<e:Object rotation="{360}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="100">
+					<tween:props>
+						<e:Object rotation="{180}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="100">
+					<tween:props>
+						<e:Object rotation="{360}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="100">
+					<tween:props>
+						<e:Object rotation="{189}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="100">
+					<tween:props>
+						<e:Object rotation="{360}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="100">
+					<tween:props>
+						<e:Object rotation="{180}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="100">
+					<tween:props>
+						<e:Object rotation="{360}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+	</w:Declarations>
+	<e:Group id="animation_plane" alpha="1" x="750">
+		<e:Image id="air_body" source="air_body_png" y="0" scaleX="1" scaleY="1" x="8"/>
+		<e:Image id="air_line" x="43" y="128" source="air_line_png" scaleX="1" scaleY="1" anchorOffsetX="45" anchorOffsetY="45"/>
+	</e:Group>
+</e:Skin>

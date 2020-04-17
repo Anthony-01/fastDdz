@@ -17,19 +17,71 @@ declare interface Platform {
     //游戏圈
     createGameClubButton(): Promise<any>
     //排行榜
-    openDataContext: any
+    openDataContext: openData
+    //截图分享功能
+    screenShop(rate: number): Promise<any>
+    //获取屏幕宽高
+    getScreenWidth(): Promise<any>
+    //领取金币并转发
+    getGold(): Promise<any>;
+    //获取授权
+    getAuthSetting(rate: number): Promise<any>;
+    //检测网络状态
+    onNetworkStatus(): Promise<any>;
+    //检测微信网络
+    addWXNetStatusChange(delegate: any): void;
+    //检测微信进入后台返回前台
+    addWXOnHide(delegate: any): void;
+    //使用微信的WebSocket接口进行通信
+    connectWxSocket(url: string, obj: any): void;
 }
 
 class DebugPlatform implements Platform {
+    constructor() {
+        this.openDataContext = new openData();
+    }
+
     async getUserInfo() {
         return { nickName: "username" }
     }
-    async login() {}
+    async login() {
+        //模拟微信获取userInfo接口
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({
+                    code: "string",
+                    rawData: "string",
+                    encryptedData: "string",
+                    iv: "string",
+                    signature: "string",
+                    nickName: "string"
+                })
+            }, 1000)
+        })
+    }
     async shop() {}
     async shareAppMessage() {}
     async createGameClubButton() {}
+    async screenShop(rate: number) {}
+    async getScreenWidth() {}
+    async getGold() {}
+    async getAuthSetting(rate: number) {}
+    async onNetworkStatus() {}
+    addWXNetStatusChange(delegate: any) {}
+    addWXOnHide(delegate: any) {}
+    connectWxSocket(url: string, obj: any) {}
 
-    openDataContext: any
+    openDataContext: openData
+}
+
+class openData {
+    async postMessage (param: any) {
+        console.log("");
+    }
+
+    createDisplayObject(param: any, param1: any, param2: any): egret.Bitmap {
+        return
+    }
 }
 
 

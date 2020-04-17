@@ -1,13 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="StartGameSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image source="start_png"/>
-	<e:Image id="gameLogo" y="230" horizontalCenter="0"/>
-	<e:Component id="gold" width="273" height="72" y="138" horizontalCenter="0"/>
-	<e:Label id="label" horizontalCenter="0" y="154" size="69" text="{gameData.label}" visible="false"/>
-	<e:Group id="group_btn" width="750" height="1334">
-		<e:Button id="btnStartGame" label="开始游戏" width="323" height="103" x="203" y="664" scaleX="1" scaleY="1"/>
-		<e:Button id="btnShare" label="分享游戏" y="799" width="323" height="98" x="203" scaleX="1" scaleY="1"/>
-		<e:Button id="rankFriend" label="好友排行" x="89" y="1025" height="77" width="215" scaleX="1" scaleY="1"/>
-		<e:Button id="rankGroup" label="群排行" x="439" y="1023" width="214" height="75" scaleX="1" scaleY="1"/>
+<e:Skin class="StartGameSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="750" height="1624">
+	<w:Config id="1677dc35217"/>
+	<e:Group x="0" y="0" width="750" height="1624">
+		<e:Image id="img_bg" source="loading_bg_jpg" x="0" y="0"/>
+		<e:Group id="group_desk" y="1624" width="750" x="0">
+			<e:Image id="desk" source="start_scene_desk_png" y="0"/>
+			<e:Image id="login_poker_0" x="269" y="295" source="login_poker_1_png"/>
+			<e:Image id="login_poker_1" x="321" y="292" source="login_poker_0_png"/>
+			<e:Image id="login_poker_2" x="-41" y="606" source="login_poker_2_png"/>
+			<e:Image id="login_poker_3" x="622" y="441" source="login_poker_3_png"/>
+		</e:Group>
+		<e:Image id="gameLogo" y="307" source="start_scene_logo_png" alpha="0" x="750"/>
+		<e:Label id="label" y="154" size="69" text="{gameData.label}" x="110" visible="false"/>
+		<e:Group id="group_btn" width="750" height="1624" x="0" y="0">
+			<e:Button id="btnStartGame" label="" y="990" scaleX="1" scaleY="1" horizontalCenter="0">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+						
+					
+					 
+					
+					
+				
+					
+					
+				
+					<e:Image width="100%" height="100%" source="btn_start_game_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="btnShare" label="" y="1172" scaleX="1" scaleY="1" horizontalCenter="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_share_game_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Button id="rankFriend" label="" x="15" y="1465" scaleX="1" scaleY="1">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_rank_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Button id="rankGroup" label="" x="617" y="1465" scaleX="1" scaleY="1">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_invite_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+		</e:Group>
+		<e:Image id="img_flash" x="169" y="958" source="btn_flash_png" visible="false"/>
 	</e:Group>
 </e:Skin>

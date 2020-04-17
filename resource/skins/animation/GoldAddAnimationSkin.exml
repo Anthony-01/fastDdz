@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GoldAddAnimationSkin" width="750" height="1624" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+	<w:Declarations>
+		<tween:TweenGroup id="goldAnimation">
+			<tween:TweenItem target="{gold_0}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="1000"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="500" ease="sineInOut">
+					<tween:props>
+						<e:Object x="{330}" alpha="{0}" y="{1537}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{gold_1}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="900"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="500" ease="sineInOut">
+					<tween:props>
+						<e:Object x="{330}" alpha="{0}" y="{1537}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{gold_2}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="800"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="500" ease="sineInOut">
+					<tween:props>
+						<e:Object x="{330}" alpha="{0}" y="{1537}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{gold_3}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="700"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="500" ease="sineInOut">
+					<tween:props>
+						<e:Object x="{330}" alpha="{0}" y="{1537}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{gold_4}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="600"/>
+				<tween:Set/>
+				<tween:To duration="450" ease="sineInOut">
+					<tween:props>
+						<e:Object x="{330}" alpha="{0}" y="{1537}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{gold_5}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="500"/>
+				<tween:Set/>
+				<tween:To duration="450" ease="sineInOut">
+					<tween:props>
+						<e:Object x="{330}" alpha="{0}" y="{1537}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{gold_6}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="400"/>
+				<tween:Set/>
+				<tween:To duration="450" ease="sineInOut">
+					<tween:props>
+						<e:Object x="{330}" alpha="{0}" y="{1537}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{gold_7}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="300"/>
+				<tween:Set/>
+				<tween:To duration="450" ease="sineInOut">
+					<tween:props>
+						<e:Object x="{330}" alpha="{0}" y="{1537}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{gold_8}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="200"/>
+				<tween:Set/>
+				<tween:To duration="450" ease="sineInOut">
+					<tween:props>
+						<e:Object x="{330}" alpha="{0}" y="{1537}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{gold_9}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="100"/>
+				<tween:Set/>
+				<tween:To duration="450" ease="sineInOut">
+					<tween:props>
+						<e:Object x="{330}" alpha="{0}" y="{1537}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{gold_10}">
+				<tween:Set/>
+				<tween:To duration="450" ease="sineInOut">
+					<tween:props>
+						<e:Object alpha="{0}" x="{330}" y="{1537}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+	</w:Declarations>
+	<e:Image source="gold_preview_1_png" scaleX="1.67" scaleY="1.67" visible="false"/>
+	<e:Image id="gold_0" source="details_animation_png" y="605" alpha="0" x="549"/>
+	<e:Image id="gold_1" source="details_animation_png" y="377" x="95" alpha="0"/>
+	<e:Image id="gold_2" source="details_animation_png" x="95" y="377" alpha="0"/>
+	<e:Image id="gold_3" source="details_animation_png" x="95" y="377" alpha="0"/>
+	<e:Image id="gold_4" source="details_animation_png" x="95" y="377" alpha="0"/>
+	<e:Image id="gold_5" source="details_animation_png" x="95" y="377" alpha="0"/>
+	<e:Image id="gold_6" source="details_animation_png" x="95" y="377" alpha="0"/>
+	<e:Image id="gold_7" source="details_animation_png" x="95" y="377" alpha="0"/>
+	<e:Image id="gold_8" source="details_animation_png" x="95" y="377" alpha="0"/>
+	<e:Image id="gold_9" source="details_animation_png" x="95" y="377" alpha="0"/>
+	<e:Image id="gold_10" source="details_animation_png" x="95" y="377" alpha="0"/>
+</e:Skin>

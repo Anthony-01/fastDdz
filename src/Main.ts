@@ -27,36 +27,38 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 import StartGameLayer = game.StartGameLayer;
-import GameModel = game.GameModel;
-import GameControl = game.GameControl;
 import GameEngine = game.GameEngine;
+import LoadingUI = game.LoadingUI;
+import RATE = game.RATE;
+import DGameStatus = managers.DGameStatus;
+import GameConst = utils.GameConst;
 
-declare var wx;
-// declare var TestSkin;
-class Main extends GameModel {
+namespace game {
+    export var RATE;
+}
 
-    //Main 游戏入口;包括初始化游戏引擎以及游戏界面
-    //_gameEngine，游戏主业务逻辑
-    //_gameView,游戏界面
-    //客户端与服务器的交互GameModel; onGameMessage
-
-    public static get Instance() {
-        return this;
-    }
-
+class Main extends eui.UILayer {
 
     protected createChildren(): void {
+        game.RATE = this.stage.stageHeight / utils.GameConst.stageH;
+        // console.log("当前舞台高：", this.stage.stageWidth,this.stage.stageHeight);
         super.createChildren();
 
         egret.lifecycle.addLifecycleListener((context) => {
-            // custom lifecycle plugin
+            let onUpdate = () => {
+                // console.log("Ctrl:刷新");
+                // managers.ServiceCtrl.getInstance().onUpdate();
+            };
+            context.onUpdate = onUpdate;
         });
 
         egret.lifecycle.onPause = () => {
+            // utils.GameConst.colorConsole("egret:后台");
             egret.ticker.pause();
         };
 
         egret.lifecycle.onResume = () => {
+            // utils.GameConst.colorConsole("egret:前台");
             egret.ticker.resume();
         };
 
@@ -66,44 +68,105 @@ class Main extends GameModel {
         egret.registerImplementation("eui.IAssetAdapter", assetAdapter);
         egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
 
+        RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadErr, this);
+        RES.addEventListener(RES.ResourceEvent.CONFIG_LOAD_ERROR, this.onConfigLoadErr, this);
 
         this.runGame().catch(e => {
             console.log(e);
         })
     }
 
+    private countGroupError = 0;
+
+    private onResourceLoadErr(event: RES.ResourceEvent): void {
+        //如果加载失败超过三次，打印失败原因
+        utils.GameConst.colorConsole("资源加载失败:");
+        console.log(event);
+        let self = this;
+        if (++this.countGroupError < 3) {
+            RES.loadGroup(event.groupName).then(() => {
+                managers.FrameManager.getInstance().m_MainStage = this.stage;
+                self.addChild(GameEngine.getInstance());
+            });
+        } else {
+            if (null == this.errSprite) {
+                this.errSprite = new egret.Sprite();
+            }
+            let label = new egret.TextField();
+            this.errSprite.addChild(label);
+            this.errSprite.x = (this.stage.stageWidth - this.errSprite.width) / 2;
+            this.errSprite.y = (this.stage.stageHeight - this.errSprite.height) / 2;
+            this.addChild(this.errSprite);
+        }
+    }
+
+    private onConfigLoadErr(err) {
+        if (null == this.errSprite) {
+            this.errSprite = new egret.Sprite();
+        }
+        let label = new egret.TextField();
+        label.text = "加载游戏资源配置失败";
+        this.errSprite.addChild(label);
+        this.errSprite.x = (this.stage.stageWidth - this.errSprite.width) / 2;
+        this.errSprite.y = (this.stage.stageHeight - this.errSprite.height) / 2;
+        this.addChild(this.errSprite);
+    }
 
 
     private async runGame() {
-        // platform.openDataContext.postMessage({
-        //     command: "loadRes"
-        // });
-        platform.shop();
-        platform.createGameClubButton();
+
+        await platform.openDataContext.postMessage({
+            command: "loadRes",
+            rate: game.RATE
+        });
+        await platform.shop();
+
+        ////防加载卡死
+        RES.setMaxLoadingThread(1);
+        // platform.createGameClubButton();
         await this.loadResource();
         await platform.login().then(data => {
-            console.log("%c打印用户信息", "color: red;font-size: 2em");
-            console.log(data);
+            // console.log("%c登陆所需信息:", "color: red;font-size: 2em");
+            // console.log(data);
             GameEngine.getInstance().userInfo = data;
-            //根据code请求用户的个人信息
-            //需要请求UserInfo
             this.createGameScene();
+        }, () => {
+            let self = this;
+            self.createGameScene();
+            GameEngine.getInstance().StartScenes.rankDisable();
+            platform.getAuthSetting(game.RATE).then(data => {
+                console.log(data);
+                GameEngine.getInstance().userInfo = data;
+                GameEngine.getInstance().StartScenes.rankActive();
+            })
         }).catch(err => {
-            //用户不授权情况下直接退出小程序
             console.log(err);
         })
     }
 
+
+
+    private errSprite: egret.Sprite;
+
     private async loadResource() {
         try {
+            //resource/default.res.json","resource/
             await RES.loadConfig("resource/default.res.json", "resource/");
+
+            // await RES.loadConfig("default.res.json", df.RESOURCE_URL);
+
+            managers.FrameManager.getInstance().gameStatus = DGameStatus.LOAD;
+            // platform.addWXOnHide(managers.FrameManager.getInstance().getDispatcher());
             await RES.loadGroup("loading");
+            await this.loadTheme();
             const loadingView = new LoadingUI();
             this.stage.addChild(loadingView);
-            await this.loadTheme();
-            await RES.loadGroup("preload", 0, loadingView);
-            await RES.loadGroup("gameScene", 0, loadingView);
+
+            await RES.loadGroup("frontload", 1, loadingView).catch(() => {
+                console.log("Main:网络加载错误");
+            });
             this.stage.removeChild(loadingView);
+            RES.destroyRes("loading");
         }
         catch (e) {
             console.error(e);
@@ -118,14 +181,18 @@ class Main extends GameModel {
             theme.addEventListener(eui.UIEvent.COMPLETE, () => {
                 resolve();
             }, this);
-
         })
     }
+
     /**
      * 创建场景界面
      * Create scene interface
-     */
+*/
     protected createGameScene(): void {
+        // console.log("创建场景界面");
+        //如何床底  GameFrame
+        //开始界面的使用
+        managers.FrameManager.getInstance().m_MainStage = this.stage;
         this.addChild(GameEngine.getInstance());
     }
 }

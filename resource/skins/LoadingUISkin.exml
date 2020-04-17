@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LoadingUISkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="167812f3210"/>
+	<e:Image id="img_bg" height="1624" source="loading_bg_jpg"/>
+	<e:Image id="img_logo" source="start_scene_logo_png" scaleX="0.6" scaleY="0.6" x="37" y="83"/>
+	<e:Image id="img_female" source="new_loading_famele_png" y="244" horizontalCenter="-72"/>
+	<e:Group id="loading_group" y="1432" x="-309">
+		<e:Image id="process_bg" x="426" y="37" source="loading_bar_bg_png"/>
+		<e:Image id="process_mask" x="436" y="45" source="loading_bar_png"/>
+		<e:Image id="process" x="0" y="45" source="loading_bar_png"/>
+		<e:Label id="_text" text="正在加载 78%" size="26" textColor="0xbf9661" fontFamily="Arial" anchorOffsetX="82" anchorOffsetY="13" y="12" x="643"/>
+		<e:Image id="_dot" x="353" y="39" source="12332_03_png"/>
+		<e:Image id="img_loading_logo" x="824" y="6" source="loading_logo_png"/>
+	</e:Group>
+</e:Skin>

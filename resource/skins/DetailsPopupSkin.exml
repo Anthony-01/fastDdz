@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DetailsPopupSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="167f43c0ed1"/>
+	<e:Group horizontalCenter="0" height="556">
+		<e:Image id="img_back" scaleX="1" scaleY="1" source="popup_back_ground_png" scale9Grid="48,101,643,16" height="558"/>
+		<e:Image y="18" source="details_title_png" x="289"/>
+		<e:Group x="33" y="110">
+			<e:Component id="gold_0" y="1" scaleX="1" scaleY="1" skinName="GetGoldSkin"/>
+			<e:Component y="1" scaleX="1" scaleY="1" skinName="GetGoldSkin" id="gold_1" x="155"/>
+			<e:Component y="1" scaleX="1" scaleY="1" skinName="GetGoldSkin" id="gold_2" x="309"/>
+			<e:Component y="186" scaleX="1" scaleY="1" skinName="GetGoldSkin" id="gold_3" x="0"/>
+			<e:Component y="186" scaleX="1" scaleY="1" skinName="GetGoldSkin" id="gold_4" x="155"/>
+			<e:Component y="186" scaleX="1" scaleY="1" skinName="GetGoldSkin" id="gold_5" x="309"/>
+			<e:Component y="0" scaleX="1" scaleY="1" id="gold_6" x="462" skinName="GetGoldScdSkin"/>
+		</e:Group>
+		<e:Image id="btn_close" source="btn_close_png" right="15" top="10"/>
+	</e:Group>
+</e:Skin>

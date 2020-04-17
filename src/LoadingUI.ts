@@ -27,84 +27,80 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
-class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter {
+namespace game {
+    const loadingWeight = 436;
+    const loadingHeight = 10;
+    const process_x = 0;//0-278
+    const dot_x = 353;//75
+    export class LoadingUI extends eui.Component implements RES.PromiseTaskReporter { //implements RES.PromiseTaskReporter
 
-    public constructor() {
-        super();
-        this.createView();
-    }
+        public img_bg:eui.Image;
+        public img_logo:eui.Image;
+        public img_female:eui.Image;
+        public loading_group:eui.Group;
+        public process_bg:eui.Image;
+        public process_mask:eui.Image;
+        public process:eui.Image;
+        public _text:eui.Label;
+        public _dot:eui.Image;
+        public img_loading_logo:eui.Image;
 
-    private _textField: egret.BitmapText;
+        public constructor() {
+            super();
+            this.addEventListener(eui.UIEvent.COMPLETE, this.onComplete, this);
+            console.log("游戏加载界面");
+        }
 
-    private _load: egret.Bitmap;
+        private _textMsg: string = "";
+        public setText(str: string) {
+            this._textMsg = str;
+        }
 
-    private _loadBar2: egret.Bitmap;
+        private onComplete() {
+            this.adjustScreen();
+            console.log("游戏加载界面组件初始化完毕");
+            this.process.mask = this.process_mask;
+            this._text.text = "正在加载 0%";
+        }
 
-    private _loadBar: egret.Bitmap;
+        private _components: any[] = [];
+        private _scaleComponent: any[] = [];
+        private adjustScreen() {
 
-    private createView(): void {
-        //位图文字
-        this._textField = new egret.BitmapText();
-        let fnt = RES.getRes("num_fnt");//加载字体位图
-        this._textField.text = "0%";
-        this._textField.font = fnt;
-        this._textField.textAlign = "center";
-        this._textField.x = 260;
-        this._textField.y = 550;
-        this._textField.width = 130;
-        this._textField.height = 100;
+            // this._components.push(this.img_bg);
+            this._components.push(this.img_logo);
+            this._components.push(this.img_female);
+            this._components.push(this.loading_group);
+            // this._components.push(this.process_mask);
+            // this._components.push(this.process);
+            // this._components.push(this._text);
+            // this._components.push(this._dot);
+            this._components.push(this.img_loading_logo);
 
-        //背景
-        let bg:egret.Bitmap = new egret.Bitmap(RES.getRes("loadingBG_jpg"));
-        this.addChild(bg);
-        //loadingIcon
-        this._load = new egret.Bitmap(RES.getRes("loading_json.loading_icon_png"));
-        this._load.anchorOffsetX = this._load.width / 2;
-        this._load.anchorOffsetY = this._load.height / 2;
-        this._load.x = 640 / 2;
-        this._load.y = 1136 / 2;
-        this.addChild(this._load);
+            this._components.forEach(component => {
+                component.y = component.y * RATE;
+            });
 
-        this._loadBar2 = new egret.Bitmap(RES.getRes("loading_json.loading_bar1_png"));
-        this._loadBar2.x = (640 - this._loadBar2.width) / 2;
-        this._loadBar2.y = (1136 - this._loadBar2.height) / 2;
-        this.addChild(this._loadBar2);
+            this._scaleComponent.push(this.img_logo);
+            this._scaleComponent.push(this.img_female);
+            // this._scaleComponent.push(this.loading_group);
+            this._scaleComponent.forEach(component => {
+                component.scaleX = component.scaleY = component.scaleX * RATE;
+            })
+        }
 
-        this._loadBar = new egret.Bitmap(RES.getRes("loading_json.loading_bar2_png"));
-        this._loadBar.x = (640 - this._loadBar.width) / 2;
-        this._loadBar.y = (1136 - this._loadBar.height) / 2;
-        this.addChild(this._loadBar);
-    }
+        public onProgress(current: number, total: number, resItem): void {
+            let rate = Math.ceil((current/total)*100) / 100;
+            if (this._text) {
+                this._text.text = `正在加载 ${Math.ceil((current/total) * 100)}%`;
+                this.process.x = process_x + rate * loadingWeight;
+                this._dot.x = dot_x + rate * loadingWeight;
+            }
+            // if (rate * 100 >= 34) {
+            // }
+            // console.log(resItem);
 
-    public onProgress(current: number, total: number): void {
-        /**显示百分比 */
-        this._textField.text = Math.ceil((current/total)*100).toString() + "%";
-
-        //遮罩
-        let mask = this.getSectorProgress(Math.ceil((current/total) * 360));
-        this.addChild(mask);
-        this._loadBar.mask = mask;
-        this.addChild(this._textField);
-        // this.addChild(this._textField);
-    }
-
-    /**loadBar遮罩 */
-    private getSectorProgress(angle: number):egret.Shape {
-        let self = this;
-        let shape:egret.Shape = new egret.Shape();
-        changeGraphics(angle);
-        return shape;
-        //绘制shape遮罩
-        function changeGraphics(angle) {
-            shape.graphics.clear();
-            shape.graphics.beginFill(16711680);
-            shape.graphics.moveTo(self._loadBar.x, self._loadBar.y);//loadBar的左上角锚点
-            shape.graphics.lineTo(self._loadBar.x + self._loadBar.width /2 , self._loadBar.y + self._loadBar.height / 2);//loadBar的圆心点
-            shape.graphics.drawArc(self._loadBar.x + self._loadBar.width /2, self._loadBar.y + self._loadBar.height / 2, self._loadBar.width / 2, 0, angle * Math.PI / 180);
-            shape.graphics.lineTo(self._loadBar.x + self._loadBar.width /2, self._loadBar.y + self._loadBar.height / 2);
-            shape.graphics.endFill();
+            // console.log("loading:", resItem);
         }
     }
-
-    // private static changeGraphics(angle: number) {}
 }

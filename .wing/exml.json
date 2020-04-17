@@ -1,0 +1,279 @@
+{
+  "1675e7f5a1c": {
+    "guideLinesEnabled": false,
+    "guideLines": [
+      {
+        "type": "v",
+        "pos": -3164
+      },
+      {
+        "type": "v",
+        "pos": -3176
+      },
+      {
+        "type": "v",
+        "pos": -3176
+      },
+      {
+        "type": "v",
+        "pos": -718
+      },
+      {
+        "type": "h",
+        "pos": -288
+      },
+      {
+        "type": "h",
+        "pos": -284
+      },
+      {
+        "type": "h",
+        "pos": -268
+      },
+      {
+        "type": "h",
+        "pos": -280
+      },
+      {
+        "type": "h",
+        "pos": -300
+      },
+      {
+        "type": "h",
+        "pos": 1286.667
+      },
+      {
+        "type": "h",
+        "pos": 1456
+      }
+    ]
+  },
+  "1676379b429": {
+    "guideLines": [
+      {
+        "type": "v",
+        "pos": 8
+      },
+      {
+        "type": "v",
+        "pos": 106.25
+      },
+      {
+        "type": "h",
+        "pos": 7.5
+      },
+      {
+        "type": "h",
+        "pos": -3.143
+      },
+      {
+        "type": "h",
+        "pos": 105.5
+      }
+    ],
+    "guideLinesEnabled": false
+  },
+  "16776e5532d": {
+    "guideLinesEnabled": true
+  },
+  "16776e5532e": {
+    "guideLines": [
+      {
+        "type": "h",
+        "pos": 82
+      },
+      {
+        "type": "h",
+        "pos": 27.857
+      },
+      {
+        "type": "h",
+        "pos": -27.75
+      }
+    ],
+    "guideLinesEnabled": false
+  },
+  "1677dc35217": {
+    "guideLinesEnabled": false,
+    "guideLines": [
+      {
+        "type": "v",
+        "pos": -1812
+      },
+      {
+        "type": "v",
+        "pos": -1820
+      },
+      {
+        "type": "v",
+        "pos": -1278.788
+      },
+      {
+        "type": "h",
+        "pos": -200
+      },
+      {
+        "type": "h",
+        "pos": -224
+      },
+      {
+        "type": "h",
+        "pos": -60.606
+      }
+    ]
+  },
+  "167812f3210": {
+    "guideLines": [
+      {
+        "type": "v",
+        "pos": -1284.848
+      },
+      {
+        "type": "v",
+        "pos": -1284.848
+      },
+      {
+        "type": "v",
+        "pos": 39.333
+      },
+      {
+        "type": "h",
+        "pos": -54.545
+      },
+      {
+        "type": "h",
+        "pos": -45.455
+      },
+      {
+        "type": "h",
+        "pos": -51.515
+      },
+      {
+        "type": "h",
+        "pos": 268.182
+      },
+      {
+        "type": "h",
+        "pos": 86
+      }
+    ],
+    "guideLinesEnabled": false
+  },
+  "167819f5dd3": {
+    "guideLinesEnabled": true,
+    "guideLines": [
+      {
+        "type": "v",
+        "pos": -716
+      },
+      {
+        "type": "v",
+        "pos": -718
+      },
+      {
+        "type": "h",
+        "pos": -40
+      },
+      {
+        "type": "h",
+        "pos": -44
+      }
+    ]
+  },
+  "global": {
+    "globalAutoLayerMarkEnable": true
+  },
+  "167ee879f97": {
+    "guideLinesEnabled": true,
+    "guideLines": [
+      {
+        "type": "h",
+        "pos": -24.242
+      },
+      {
+        "type": "h",
+        "pos": -27.273
+      }
+    ]
+  },
+  "167ee9abb3e": {
+    "guideLinesEnabled": false,
+    "guideLines": [
+      {
+        "type": "v",
+        "pos": 98
+      },
+      {
+        "type": "h",
+        "pos": 620
+      }
+    ]
+  },
+  "167f43c0ed1": {
+    "guideLinesEnabled": true,
+    "guideLines": [
+      {
+        "type": "v",
+        "pos": -451.515
+      },
+      {
+        "type": "h",
+        "pos": -189.394
+      },
+      {
+        "type": "h",
+        "pos": -189.394
+      },
+      {
+        "type": "h",
+        "pos": -190.909
+      }
+    ]
+  },
+  "16873a0e8b7": {
+    "guideLinesEnabled": false,
+    "guideLines": [
+      {
+        "type": "v",
+        "pos": 131
+      },
+      {
+        "type": "h",
+        "pos": 486
+      },
+      {
+        "type": "h",
+        "pos": 1445.333
+      },
+      {
+        "type": "h",
+        "pos": 1334
+      },
+      {
+        "type": "h",
+        "pos": 564.5
+      }
+    ]
+  },
+  "168a32027b7": {
+    "guideLinesEnabled": false,
+    "guideLines": [
+      {
+        "type": "v",
+        "pos": 401
+      },
+      {
+        "type": "v",
+        "pos": -167
+      },
+      {
+        "type": "h",
+        "pos": 1300
+      },
+      {
+        "type": "h",
+        "pos": 581.6
+      }
+    ]
+  }
+}

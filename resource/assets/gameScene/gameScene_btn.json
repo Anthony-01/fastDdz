@@ -1,0 +1,15 @@
+{"file":"gameScene_btn.png","frames":{
+"btn_back_png":{"x":282,"y":362,"w":94,"h":96,"offX":0,"offY":2,"sourceW":94,"sourceH":98},
+"btn_cancelTrustee_png":{"x":1,"y":1,"w":431,"h":142,"offX":0,"offY":2,"sourceW":431,"sourceH":144},
+"btn_forbidOutCard_png":{"x":728,"y":122,"w":292,"h":119,"offX":1,"offY":3,"sourceW":294,"sourceH":122},
+"btn_forbidPass_png":{"x":434,"y":122,"w":292,"h":119,"offX":1,"offY":3,"sourceW":294,"sourceH":122},
+"btn_mute_png":{"x":295,"y":145,"w":94,"h":96,"offX":0,"offY":2,"sourceW":94,"sourceH":98},
+"btn_no_cards_png":{"x":728,"y":1,"w":292,"h":119,"offX":0,"offY":3,"sourceW":294,"sourceH":122},
+"btn_open_music_png":{"x":186,"y":266,"w":94,"h":96,"offX":0,"offY":2,"sourceW":94,"sourceH":98},
+"btn_outCard_png":{"x":434,"y":1,"w":292,"h":119,"offX":1,"offY":3,"sourceW":294,"sourceH":122},
+"btn_pass_png":{"x":1,"y":145,"w":292,"h":119,"offX":1,"offY":3,"sourceW":294,"sourceH":122},
+"btn_receive_png":{"x":1,"y":266,"w":93,"h":108,"offX":3,"offY":4,"sourceW":100,"sourceH":114},
+"btn_ruler_png":{"x":1,"y":376,"w":77,"h":92,"offX":10,"offY":9,"sourceW":100,"sourceH":114},
+"btn_share_cards_png":{"x":96,"y":266,"w":88,"h":114,"offX":5,"offY":0,"sourceW":100,"sourceH":114},
+"btn_sure_png":{"x":295,"y":243,"w":292,"h":117,"offX":2,"offY":3,"sourceW":298,"sourceH":120},
+"btn_trustee_png":{"x":186,"y":364,"w":57,"h":88,"offX":17,"offY":1,"sourceW":90,"sourceH":90}}}

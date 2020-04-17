@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PokerSkin" xmlns:e="http://ns.egret.com/eui">
+	<e:Image source="poker_01" verticalCenter="0" horizontalCenter="0"/>
+	<e:Rect width="122" height="170" fillAlpha="0.3" ellipseWidth="45" ellipseHeight="37" horizontalCenter="0" y="9" visible="false"/>
+	<e:Image source="poker_mask_png" horizontalCenter="0" verticalCenter="0" visible="false"/>
+	<e:Image y="5" source="logo_win_png" x="71"/>
+</e:Skin>

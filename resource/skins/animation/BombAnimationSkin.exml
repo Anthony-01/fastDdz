@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="BombAnimationSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+	<w:Declarations>
+		<tween:TweenGroup id="bombAnimation">
+			<tween:TweenItem target="{bomb_0}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bomb_1}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="50"/>
+				<tween:Set/>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bomb_2}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="100"/>
+				<tween:Set/>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bomb_3}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="150"/>
+				<tween:Set/>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bomb_4}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="200"/>
+				<tween:Set/>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bomb_5}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="250"/>
+				<tween:Set/>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bomb_6}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="300"/>
+				<tween:Set/>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bomb_7}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="350"/>
+				<tween:Set/>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bomb_8}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="400"/>
+				<tween:Set/>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bomb_9}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="450"/>
+				<tween:Set/>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bomb_10}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="500"/>
+				<tween:Set/>
+				<tween:To duration="50">
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:To>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bomb_11}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="550"/>
+				<tween:Set/>
+				<tween:To duration="50">
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:To>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bomb_12}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="600"/>
+				<tween:Set/>
+				<tween:To duration="50">
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:To>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bomb_13}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="650"/>
+				<tween:Set/>
+				<tween:To duration="50">
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:To>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{bomb_14}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:Wait duration="700"/>
+				<tween:Set/>
+				<tween:To duration="50">
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:To>
+				<tween:Wait duration="50"/>
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{0}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+			<tween:TweenItem target="{animation_group}">
+				<tween:Set>
+					<tween:props>
+						<e:Object alpha="{1}"/>
+					</tween:props>
+				</tween:Set>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+	</w:Declarations>
+	<e:Group id="animation_group" width="584" height="688" alpha="0">
+		<e:Image id="bomb_0" source="bomb_0_png" y="0" scaleX="1" scaleY="1" x="167"/>
+		<e:Image y="0" scaleX="1" scaleY="1" id="bomb_1" source="bomb_1_png" x="167"/>
+		<e:Image y="0" scaleX="1" scaleY="1" id="bomb_2" source="bomb_2_png" x="167"/>
+		<e:Image scaleX="1" scaleY="1" id="bomb_3" horizontalCenter="0" source="bomb_3_png" bottom="0"/>
+		<e:Image scaleX="1" scaleY="1" id="bomb_4" horizontalCenter="0" source="bomb_4_png" bottom="0"/>
+		<e:Image scaleX="1" scaleY="1" id="bomb_5" horizontalCenter="0" source="bomb_5_png" bottom="0"/>
+		<e:Image scaleX="1" scaleY="1" id="bomb_6" horizontalCenter="0" source="bomb_6_png" bottom="0"/>
+		<e:Image scaleX="1" scaleY="1" id="bomb_7" horizontalCenter="0" source="bomb_7_png" bottom="0"/>
+		<e:Image scaleX="1" scaleY="1" id="bomb_8" horizontalCenter="0" source="bomb_8_png" bottom="0"/>
+		<e:Image scaleX="1" scaleY="1" id="bomb_9" horizontalCenter="0" source="bomb_9_png" bottom="0"/>
+		<e:Image scaleX="1" scaleY="1" id="bomb_10" horizontalCenter="0" source="bomb_10_png" bottom="0"/>
+		<e:Image scaleX="1" scaleY="1" id="bomb_11" horizontalCenter="0" source="bomb_11_png" bottom="0"/>
+		<e:Image scaleX="1" scaleY="1" id="bomb_12" horizontalCenter="0" source="bomb_12_png" bottom="0"/>
+		<e:Image scaleX="1" scaleY="1" id="bomb_13" horizontalCenter="0" source="bomb_13_png" bottom="0"/>
+		<e:Image scaleX="1" scaleY="1" id="bomb_14" horizontalCenter="0" source="bomb_14_png" bottom="0"/>
+	</e:Group>
+</e:Skin>

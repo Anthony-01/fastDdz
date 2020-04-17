@@ -53,7 +53,7 @@ var utils;
             for (var i = 0; i < this._timerQueue.length; i++) {
                 var timerInfo = this._timerQueue[i];
                 if (timerInfo.key == key) {
-                    egret.assert(target == timerInfo.target);
+                    egret.warn(target == timerInfo.target);
                     if (target != timerInfo.target) {
                         console.log("对象不匹配");
                         return false;

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="WaitingSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="750" height="1624" fillAlpha="0.3"/>
+	<e:Image id="logo" source="waiting_logo_png" anchorOffsetX="39" anchorOffsetY="39" x="375" y="812"/>
+	<e:Label id="label" text="loading..." y="859" textColor="0xffffff" horizontalCenter="0"/>
+</e:Skin>

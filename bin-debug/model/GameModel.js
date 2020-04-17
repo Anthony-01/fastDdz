@@ -1,66 +1,74 @@
-var __reflect = (this && this.__reflect) || function (p, c, t) {
-    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
-};
-var __extends = this && this.__extends || function __extends(t, e) { 
- function r() { 
- this.constructor = t;
-}
-for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
-r.prototype = e.prototype, t.prototype = new r();
-};
-var game;
-(function (game) {
-    var GameModel = (function (_super) {
-        __extends(GameModel, _super);
-        function GameModel() {
-            var _this = _super.call(this) || this;
-            _this.addEventListener(eui.UIEvent.COMPLETE, _this.onInitComplete, _this);
-            _this.addEventListener(egret.Event.REMOVED_FROM_STAGE, _this.onExit, _this);
-            var timerControl = utils.TimerControl.getTimerControl();
-            timerControl.createTimer(_this, 1000 / 60, 0, _this.onUpdateSecond, "update");
-            _this.createSocket();
-            return _this;
-        }
-        /**
-         * 子类重新覆盖组件实例化后的onComplete
-         * */
-        GameModel.prototype.onInitComplete = function () {
-        };
-        /**
-         * 每帧更新
-         * */
-        GameModel.prototype.onUpdateSecond = function () {
-        };
-        GameModel.prototype.onGameMessage = function (object) {
-            var message = JSON.parse(object.data);
-            console.log(message);
-        };
-        GameModel.prototype.createSocket = function () {
-            this.ws = new WebSocket('ws://127.0.01:8180');
-            this.ws.onopen = this.onOpen;
-            this.ws.onmessage = this.onGameMessage;
-        };
-        GameModel.prototype.onOpen = function (e) {
-            console.log("socket has been connected!");
-        };
-        GameModel.prototype.sendMessage = function (data) {
-            //传输的信息要加上用户的信息
-            data.nickName = "海青";
-            var message = JSON.stringify(data);
-            if (this.ws.readyState == 1) {
-                this.ws.send(message);
-            }
-            else {
-                console.log("%csocket连接失败：", "color: red; font-size: 2em");
-                console.log(this.ws.readyState);
-            }
-        };
-        GameModel.prototype.onExit = function () {
-            //移除定时器
-            utils.TimerControl.getTimerControl().cleanTimer(this, "update");
-        };
-        return GameModel;
-    }(eui.UILayer));
-    game.GameModel = GameModel;
-    __reflect(GameModel.prototype, "game.GameModel");
-})(game || (game = {}));
+// namespace game {
+//
+//     export class GameModel extends eui.UILayer { //负责与服务器进行通信
+//
+//         public _gameFrame: frame.GameFrame;//游戏框架
+//         public _gameViewLayer: any;//主游戏视图
+//
+//         constructor() {
+//             super();
+//             this.addEventListener(eui.UIEvent.COMPLETE, this.onInitComplete, this);
+//             this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
+//
+//             let timerControl = utils.TimerControl.getTimerControl();
+//
+//             timerControl.createTimer(this, 1000 / 60, 0, this.onUpdateSecond, "update");
+//
+//             this.createSocket();
+//         }
+//
+//         /**
+//          * 子类重新覆盖组件实例化后的onComplete
+//          * */
+//         onInitComplete() {
+//
+//         }
+//
+//         /**
+//          * 每帧更新
+//          * */
+//         onUpdateSecond() {
+//
+//         }
+//
+//         onGameMessage(object: any): void {
+//             let message = JSON.parse(object.data);
+//             console.log(message);
+//         }
+//
+//         /**
+//          * socket连接
+//          * */
+//         ws: any;
+//
+//         private createSocket():void {
+//             this.ws = new WebSocket('ws://127.0.01:8180');
+//             this.ws.onopen = this.onOpen;
+//             this.ws.onmessage = this.onGameMessage;
+//         }
+//
+//         private onOpen(e: any) {
+//             console.log("socket has been connected!");
+//
+//         }
+//
+//         sendMessage(data: any) {
+//             //传输的信息要加上用户的信息
+//             data.nickName = "海青";
+//             let message = JSON.stringify(data);
+//             if(this.ws.readyState == 1) {
+//                 this.ws.send(message);
+//             } else {
+//                 console.log("%csocket连接失败：", "color: red; font-size: 2em");
+//                 console.log(this.ws.readyState);
+//             }
+//         }
+//
+//         onExit() {
+//             //移除定时器
+//             utils.TimerControl.getTimerControl().cleanTimer(this, "update");
+//         }
+//
+//
+//     }
+// } 

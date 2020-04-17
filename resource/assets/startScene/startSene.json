@@ -1,0 +1,12 @@
+{"file":"startSene.png","frames":{
+"login_poker_0_png":{"x":752,"y":143,"w":146,"h":140,"offX":0,"offY":0,"sourceW":146,"sourceH":143},
+"login_poker_1_png":{"x":752,"y":0,"w":146,"h":141,"offX":0,"offY":1,"sourceW":146,"sourceH":143},
+"login_poker_2_png":{"x":752,"y":435,"w":138,"h":138,"offX":0,"offY":0,"sourceW":138,"sourceH":138},
+"login_poker_3_png":{"x":752,"y":285,"w":136,"h":148,"offX":0,"offY":0,"sourceW":136,"sourceH":148},
+"start_scene_desk_png":{"x":0,"y":0,"w":750,"h":1179,"offX":0,"offY":1,"sourceW":750,"sourceH":1180},
+"start_scene_logo_png":{"x":0,"y":1181,"w":482,"h":320,"offX":0,"offY":5,"sourceW":482,"sourceH":326},
+"btn_flash_png":{"x":752,"y":575,"w":208,"h":67,"offX":0,"offY":0,"sourceW":208,"sourceH":70},
+"btn_invite_png":{"x":917,"y":754,"w":88,"h":106,"offX":13,"offY":4,"sourceW":120,"sourceH":114},
+"btn_rank_png":{"x":917,"y":644,"w":90,"h":108,"offX":16,"offY":1,"sourceW":120,"sourceH":114},
+"btn_share_game_png":{"x":484,"y":1326,"w":431,"h":143,"offX":0,"offY":1,"sourceW":432,"sourceH":144},
+"btn_start_game_png":{"x":484,"y":1181,"w":431,"h":143,"offX":0,"offY":1,"sourceW":432,"sourceH":144}}}

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RankListSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:game="game.*">
+	<w:Config id="16873a0e8b7"/>
+	<e:Rect width="750" height="1624" fillAlpha="0.2"/>
+	<e:Group id="rank" horizontalCenter="0" y="196">
+		<e:Image scale9Grid="118,97,525,20" height="1279" x="1" y="-1" source="rank_back_ground_png"/>
+		<e:Image y="18" source="text_rank_title_png" horizontalCenter="0"/>
+		<e:Group x="28" y="141">
+			<e:Image y="0" source="rank_top_png" x="0"/>
+			<e:Image x="52" y="12" source="rank_text_info_png"/>
+			<e:Image x="355" y="12" source="rank_text_win_count_png"/>
+			<e:Image x="527" y="12" source="rank_text_wealth_png"/>
+		</e:Group>
+		<e:Button id="btn_close" label="" x="658" y="20">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="rank_btn_close_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Group id="user_0" y="265" horizontalCenter="0" width="627" height="109" visible="false">
+			<e:BitmapLabel id="rank_key_0" x="17" y="44" text="f" font="rank_key_fnt_fnt" scaleX="0.5" scaleY="0.5" anchorOffsetX="30" anchorOffsetY="44"/>
+			<e:Group id="head_group_0" x="70" y="5" height="80" width="80">
+				<e:Image id="user_head_0" width="80" height="80" x="0" y="0"/>
+				<e:Rect id="head_mask_0" width="80" height="80" x="0" y="0" fillAlpha="1" ellipseWidth="25" ellipseHeight="25"/>
+			</e:Group>
+		<e:Label id="nick_name_0" text="我走路带风" x="157" size="32" textColor="0xEDE9E2" fontFamily="SimHei" y="31"/>
+			<e:Image horizontalCenter="0" source="img_rank_line_png" bottom="0"/>
+			<e:BitmapLabel id="rank_win_0" font="rank_win_count_fnt_fnt" text="11" anchorOffsetY="22" anchorOffsetX="26" x="388" y="46"/>
+			<e:BitmapLabel id="rank_gold_0" font="rank_gold_fnt_fnt" text="367" anchorOffsetX="42" anchorOffsetY="22" x="554" y="46"/>
+		</e:Group>
+		<e:Group id="user_1" y="415" horizontalCenter="0" width="627" height="109" visible="false">
+			<e:BitmapLabel id="rank_key_1" x="17" y="44" text="f" font="rank_key_fnt_fnt" scaleX="0.5" scaleY="0.5" anchorOffsetX="30" anchorOffsetY="44"/>
+			<e:Group id="head_group_1" x="70" y="5" height="80" width="80">
+			<e:Image id="user_head_1" width="80" height="80" x="0" y="0"/>
+			<e:Rect id="head_mask_1" width="80" height="80" x="0" y="0" fillAlpha="1" ellipseWidth="25" ellipseHeight="25"/>
+			</e:Group>
+			<e:Label id="nick_name_1" text="我走路带风" x="157" size="32" textColor="0xEDE9E2" fontFamily="SimHei" y="31"/>
+			<e:Image horizontalCenter="0" source="img_rank_line_png" bottom="0"/>
+			<e:BitmapLabel id="rank_win_1" font="rank_win_count_fnt_fnt" text="30" anchorOffsetX="26" anchorOffsetY="22" x="388" y="46"/>
+			<e:BitmapLabel id="rank_gold_1" y="46" font="rank_gold_fnt_fnt" text="98-58w" x="554" anchorOffsetX="87" anchorOffsetY="24"/>
+		</e:Group>
+		<e:Group id="user_2" y="545" horizontalCenter="0" width="627" height="109" visible="false">
+			<e:BitmapLabel id="rank_key_2" x="17" y="44" text="f" font="rank_key_fnt_fnt" scaleX="0.5" scaleY="0.5" anchorOffsetX="30" anchorOffsetY="44"/>
+			<e:Group id="head_group_2" x="70" y="5" height="80" width="80">
+			<e:Image id="user_head_2" width="80" height="80" x="0" y="0"/>
+			<e:Rect id="head_mask_2" width="80" height="80" x="0" y="0" fillAlpha="1" ellipseWidth="25" ellipseHeight="25"/>
+			</e:Group>
+			<e:Label id="nick_name_2" text="我走路带风" x="157" size="32" textColor="0xEDE9E2" fontFamily="SimHei" y="31"/>
+			<e:Image horizontalCenter="0" source="img_rank_line_png" bottom="0"/>
+			<e:BitmapLabel id="rank_win_2" font="rank_win_count_fnt_fnt" text="30" anchorOffsetX="26" anchorOffsetY="22" x="388" y="46"/>
+			<e:BitmapLabel id="rank_gold_2" x="554" y="46" font="rank_gold_fnt_fnt" text="98-58w" anchorOffsetX="87" anchorOffsetY="24"/>
+		</e:Group>
+		<e:Group id="user_3" y="675" horizontalCenter="0" width="627" height="109" visible="false">
+			<e:BitmapLabel id="rank_key_3" x="17" y="44" text="f" font="rank_key_fnt_fnt" scaleX="0.5" scaleY="0.5" anchorOffsetX="30" anchorOffsetY="44"/>
+			<e:Group id="head_group_3" x="70" y="5" height="80" width="80">
+			<e:Image id="user_head_3" width="80" height="80" x="0" y="0"/>
+			<e:Rect id="head_mask_3" width="80" height="80" x="0" y="0" fillAlpha="1" ellipseWidth="25" ellipseHeight="25"/>
+			</e:Group>
+			<e:Label id="nick_name_3" text="我走路带风" x="157" size="32" textColor="0xEDE9E2" fontFamily="SimHei" y="31"/>
+			<e:Image horizontalCenter="0" source="img_rank_line_png" bottom="0"/>
+			<e:BitmapLabel id="rank_win_3" font="rank_win_count_fnt_fnt" text="30" anchorOffsetX="26" anchorOffsetY="22" x="388" y="46"/>
+			<e:BitmapLabel id="rank_gold_3" font="rank_gold_fnt_fnt" text="98-58w" x="554" y="46" anchorOffsetX="87" anchorOffsetY="24"/>
+		</e:Group>
+		<e:Group id="user_4" y="825" horizontalCenter="0" width="627" height="109" visible="false">
+			<e:BitmapLabel id="rank_key_4" x="17" y="44" text="f" font="rank_key_fnt_fnt" scaleX="0.5" scaleY="0.5" anchorOffsetX="30" anchorOffsetY="44"/>
+			<e:Group id="head_group_4" x="70" y="5" height="80" width="80">
+			<e:Image id="user_head_4" width="80" height="80" x="0" y="0"/>
+			<e:Rect id="head_mask_4" width="80" height="80" x="0" y="0" fillAlpha="1" ellipseWidth="25" ellipseHeight="25"/>
+			</e:Group>
+			<e:Label id="nick_name_4" text="我走路带风" x="157" size="32" textColor="0xEDE9E2" fontFamily="SimHei" y="31"/>
+			<e:Image horizontalCenter="0" source="img_rank_line_png" bottom="0"/>
+			<e:BitmapLabel id="rank_win_4" font="rank_win_count_fnt_fnt" text="30" anchorOffsetX="26" anchorOffsetY="22" x="388" y="46"/>
+			<e:BitmapLabel id="rank_gold_4" x="554" y="46" font="rank_gold_fnt_fnt" text="98-58w" anchorOffsetX="87" anchorOffsetY="24"/>
+		</e:Group>
+		<e:Group id="user_5" y="955" horizontalCenter="0" width="627" height="109" visible="false">
+			<e:BitmapLabel id="rank_key_5" x="17" y="44" text="f" font="rank_key_fnt_fnt" scaleX="0.5" scaleY="0.5" anchorOffsetX="30" anchorOffsetY="44"/>
+			<e:Group id="head_group_5" x="70" y="5" height="80" width="80">
+			<e:Image id="user_head_5" width="80" height="80" x="0" y="0"/>
+			<e:Rect id="head_mask_5" width="80" height="80" x="0" y="0" fillAlpha="1" ellipseWidth="25" ellipseHeight="25"/>
+			</e:Group>
+			<e:Label id="nick_name_5" text="我走路带风" x="157" size="32" textColor="0xEDE9E2" fontFamily="SimHei" y="31"/>
+			<e:Image horizontalCenter="0" source="img_rank_line_png" bottom="0"/>
+			<e:BitmapLabel id="rank_win_5" font="rank_win_count_fnt_fnt" text="30" anchorOffsetX="26" anchorOffsetY="22" x="388" y="46"/>
+			<e:BitmapLabel id="rank_gold_5" x="554" y="46" font="rank_gold_fnt_fnt" text="98-58w" anchorOffsetX="87" anchorOffsetY="24"/>
+		</e:Group>
+		<e:Button id="btn_preview" label="" anchorOffsetX="94" anchorOffsetY="39" x="177" bottom="50">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_rank_preview_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="btn_next" label="" anchorOffsetX="94" anchorOffsetY="39" x="559" bottom="50">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_rank_next_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Label id="rank_page" text="1 / 10" textColor="0xd1915e" bottom="72" anchorOffsetY="15" horizontalCenter="-0.5" anchorOffsetX="38" visible="false"/>
+	</e:Group>
+</e:Skin>

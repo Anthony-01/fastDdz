@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="UserInfoSkin" xmlns:e="http://ns.egret.com/eui">
-	<e:Image source="head_0_jpg"/>
-	<e:Rect width="300" height="300" fillAlpha="0.1" ellipseWidth="300" ellipseHeight="300"/>
+<e:Skin class="UserInfoSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="16776e5532e"/>
+	<e:Image x="0" y="0" source="head_bg_png"/>
+	<e:Component id="user_head" skinName="HeadBorderSkin"/>
 </e:Skin>

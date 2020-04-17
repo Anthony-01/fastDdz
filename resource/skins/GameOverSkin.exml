@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameOverSkin" width="750" height="1624" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="167819f5dd3"/>
+	<e:Rect id="game_scene_mask" width="750" height="1624" fillAlpha="0.3"/>
+	<e:Image id="preview" source="" visible="false"/>
+	<e:Group id="group_result" y="195" horizontalCenter="0">
+		<e:Image y="0" x="0" source="result_new_bg_png"/>
+		<e:Image x="239" y="20" source="result_title_png"/>
+		<e:Image x="253" y="140" source="result_score_text_png"/>
+		<e:BitmapLabel id="cell_score" font="result_cell_score_fnt" text="3000" anchorOffsetX="64" anchorOffsetY="26" x="419" y="159"/>
+		<e:Group id="user_0" x="37" y="295">
+			<e:Image id="user_head_0" width="88" height="88" anchorOffsetY="44" x="0" y="51"/>
+			<e:Rect id="head_mask_0" width="88" height="88" x="0" fillAlpha="1" ellipseWidth="25" ellipseHeight="25" anchorOffsetY="44" y="51"/>
+			<e:Label id="nick_name_0" text="我走路" size="28" textColor="0xede9e2" fontFamily="SimHei" x="100" anchorOffsetY="14" y="51"/>
+			<e:BitmapLabel id="left_cards_0" scaleX="1" scaleY="1" font="result_bomb_fnt" text="0" anchorOffsetX="13" anchorOffsetY="21" x="264" y="51"/>
+			<e:BitmapLabel id="bomb_count_0" font="result_bomb_fnt" text="6" anchorOffsetX="13" anchorOffsetY="21" x="362" y="51"/>
+			<e:BitmapLabel id="bomb_fail_0" font="result_bomb_fnt" text="6" anchorOffsetX="13" anchorOffsetY="21" x="443" y="51"/>
+			<e:Group width="201" height="88" anchorOffsetX="100.5" anchorOffsetY="44" x="569.5" y="51">
+			<e:Label id="result_score_0" text="+110,220" verticalAlign="middle" textAlign="center" textColor="0xe8b429" size="40" horizontalCenter="0" verticalCenter="0"/>
+			</e:Group>
+		</e:Group>
+		<e:Group id="user_1" x="37" y="398">
+			<e:Image width="88" height="88" x="0" y="0" id="user_head_1"/>
+			<e:Rect width="88" height="88" x="0" y="0" fillAlpha="1" ellipseWidth="25" ellipseHeight="25" id="head_mask_1"/>
+			<e:Label text="飞翔的..." x="100" y="51" size="28" id="nick_name_1" textColor="0xEDE9E2" fontFamily="SimHei" anchorOffsetY="14"/>
+			<e:BitmapLabel scaleX="1" scaleY="1" font="result_bomb_fnt" text="0" id="left_cards_1" anchorOffsetX="13" anchorOffsetY="21" x="264" y="51"/>
+			<e:BitmapLabel font="result_bomb_fnt" id="bomb_count_1" text="6" scaleX="1" scaleY="1" anchorOffsetX="13" anchorOffsetY="21" y="51" x="362"/>
+			<e:BitmapLabel id="bomb_fail_1" font="result_bomb_fnt" text="6" anchorOffsetX="13" anchorOffsetY="21" x="443" y="51" scaleX="1" scaleY="1"/>
+			<e:Group width="201" height="88" x="569.5" y="51" scaleX="1" scaleY="1" anchorOffsetX="100.5" anchorOffsetY="44">
+			<e:Label id="result_score_1" text="-55,110" verticalAlign="middle" textAlign="center" size="40" horizontalCenter="0" verticalCenter="0" textColor="0x00dd8a"/>
+			</e:Group>
+		</e:Group>
+		<e:Group id="user_2" x="37" y="497">
+			<e:Image width="88" height="88" x="0" y="0" id="user_head_2"/>
+			<e:Rect width="88" height="88" x="0" y="0" fillAlpha="1" ellipseWidth="25" ellipseHeight="25" id="head_mask_2"/>
+			<e:Label text="拉风的..." x="100" y="51" size="28" id="nick_name_2" textColor="0xEDE9E2" fontFamily="SimHei" anchorOffsetY="14"/>
+			<e:BitmapLabel scaleX="1" scaleY="1" font="result_bomb_fnt" text="0" id="left_cards_2" anchorOffsetX="13" anchorOffsetY="21" y="51" x="264"/>
+			<e:BitmapLabel font="result_bomb_fnt" id="bomb_count_2" text="6" scaleX="1" scaleY="1" anchorOffsetX="13" anchorOffsetY="21" x="362" y="51"/>
+			<e:BitmapLabel id="bomb_fail_2" font="result_bomb_fnt" text="6" anchorOffsetX="13" anchorOffsetY="21" x="443" y="51" scaleX="1" scaleY="1"/>
+			<e:Group width="201" height="88" scaleX="1" scaleY="1" anchorOffsetX="100.5" anchorOffsetY="44" y="51" x="569.5">
+			<e:Label id="result_score_2" text="-55,110" verticalAlign="middle" textAlign="center" size="40" horizontalCenter="0" verticalCenter="0" textColor="0x00dd8a"/>
+			</e:Group>
+		</e:Group>
+		<e:Button id="btn_close" label="" x="649" y="22" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_close_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+	<e:Group id="result_cards_container_0" width="750" height="164" y="1122" horizontalCenter="0">
+	</e:Group>
+	<e:Group id="result_cards_container_2" width="375" height="217" y="818" left="0">
+		<e:Image id="poker_01" x="21" source="poker_01" scaleX="0.6" scaleY="0.6" visible="false"/>
+	</e:Group>
+	<e:Group id="result_cards_container_1" width="375" height="217" y="818" right="0">
+		<e:Image x="272" id="poker_0" source="poker_01" scaleX="0.6" scaleY="0.6" y="0" visible="false"/>
+	</e:Group>
+	<e:Button id="btn_again" label="" horizontalCenter="0" anchorOffsetX="216" anchorOffsetY="74" y="1374">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="btn_again_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+</e:Skin>

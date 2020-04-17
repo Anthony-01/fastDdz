@@ -3,7 +3,7 @@
   "compilerVersion": "5.2.10",
   "template": {},
   "target": {
-    "current": "web"
+    "current": "wxgame"
   },
   "modules": [
     {
@@ -23,6 +23,12 @@
     },
     {
       "name": "socket"
+    },
+    {
+      "name": "game"
+    },
+    {
+      "name": "dragonbones"
     }
   ]
 }

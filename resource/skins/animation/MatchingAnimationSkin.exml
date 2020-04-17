@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MatchingAnimationSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*" width="438">
+	<w:Declarations>
+		<tween:TweenGroup id="matchingAnimation">
+			<tween:TweenItem target="{dot_0}">
+				<tween:Set/>
+				<tween:To duration="150">
+					<tween:props>
+						<e:Object y="{16}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="150">
+					<tween:props>
+						<e:Object y="{32}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{dot_1}">
+				<tween:Wait duration="150"/>
+				<tween:Set/>
+				<tween:To duration="150">
+					<tween:props>
+						<e:Object y="{16}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="150">
+					<tween:props>
+						<e:Object y="{32}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{dot_2}">
+				<tween:Wait duration="300"/>
+				<tween:Set/>
+				<tween:To duration="150">
+					<tween:props>
+						<e:Object y="{16}"/>
+					</tween:props>
+				</tween:To>
+				<tween:To duration="150">
+					<tween:props>
+						<e:Object y="{32}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+	</w:Declarations>
+	<e:Group id="animation_group" width="438">
+		<e:Image source="matching_png"/>
+		<e:Image id="dot_0" x="360" source="matching_dot_0_png" y="32"/>
+		<e:Image id="dot_1" x="384" source="matching_dot_0_png" y="32"/>
+		<e:Image id="dot_2" x="408" source="matching_dot_0_png" y="32"/>
+	</e:Group>
+</e:Skin>

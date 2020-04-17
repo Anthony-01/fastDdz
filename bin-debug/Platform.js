@@ -38,6 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var DebugPlatform = (function () {
     function DebugPlatform() {
+        this.openDataContext = new openData();
     }
     DebugPlatform.prototype.getUserInfo = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -47,9 +48,23 @@ var DebugPlatform = (function () {
         });
     };
     DebugPlatform.prototype.login = function () {
-        return __awaiter(this, void 0, void 0, function () { return __generator(this, function (_a) {
-            return [2 /*return*/];
-        }); });
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                //模拟微信获取userInfo接口
+                return [2 /*return*/, new Promise(function (resolve, reject) {
+                        setTimeout(function () {
+                            resolve({
+                                code: "string",
+                                rawData: "string",
+                                encryptedData: "string",
+                                iv: "string",
+                                signature: "string",
+                                nickName: "string"
+                            });
+                        }, 1000);
+                    })];
+            });
+        });
     };
     DebugPlatform.prototype.shop = function () {
         return __awaiter(this, void 0, void 0, function () { return __generator(this, function (_a) {
@@ -66,9 +81,54 @@ var DebugPlatform = (function () {
             return [2 /*return*/];
         }); });
     };
+    DebugPlatform.prototype.screenShop = function (rate) {
+        return __awaiter(this, void 0, void 0, function () { return __generator(this, function (_a) {
+            return [2 /*return*/];
+        }); });
+    };
+    DebugPlatform.prototype.getScreenWidth = function () {
+        return __awaiter(this, void 0, void 0, function () { return __generator(this, function (_a) {
+            return [2 /*return*/];
+        }); });
+    };
+    DebugPlatform.prototype.getGold = function () {
+        return __awaiter(this, void 0, void 0, function () { return __generator(this, function (_a) {
+            return [2 /*return*/];
+        }); });
+    };
+    DebugPlatform.prototype.getAuthSetting = function (rate) {
+        return __awaiter(this, void 0, void 0, function () { return __generator(this, function (_a) {
+            return [2 /*return*/];
+        }); });
+    };
+    DebugPlatform.prototype.onNetworkStatus = function () {
+        return __awaiter(this, void 0, void 0, function () { return __generator(this, function (_a) {
+            return [2 /*return*/];
+        }); });
+    };
+    DebugPlatform.prototype.addWXNetStatusChange = function (delegate) { };
+    DebugPlatform.prototype.addWXOnHide = function (delegate) { };
+    DebugPlatform.prototype.connectWxSocket = function (url, obj) { };
     return DebugPlatform;
 }());
 __reflect(DebugPlatform.prototype, "DebugPlatform", ["Platform"]);
+var openData = (function () {
+    function openData() {
+    }
+    openData.prototype.postMessage = function (param) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                console.log("");
+                return [2 /*return*/];
+            });
+        });
+    };
+    openData.prototype.createDisplayObject = function (param, param1, param2) {
+        return;
+    };
+    return openData;
+}());
+__reflect(openData.prototype, "openData");
 if (!window.platform) {
     window.platform = new DebugPlatform();
 }
